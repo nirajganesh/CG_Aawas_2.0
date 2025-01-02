@@ -48,6 +48,16 @@ export const useSignIn = () => {
           })
           return
         }
+
+        // Call login API
+        MySwal.fire({
+          title: 'Logging In',
+          text: 'Please wait...',
+          icon: 'info',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+        })
+        window.location.href = '/dashboard'
       },
       (err) => {
         console.log(err, getValues())
